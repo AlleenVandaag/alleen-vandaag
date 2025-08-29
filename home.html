@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+  <title>Home</title>
   <link rel="stylesheet" href="home.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
+  
 </head>
-    <body>
+<body>
+<div class="site-wrapper">
     <header>
-        <h1>Welkom op onze website</h1>
-        <p>Ontdek onze diensten en producten</p>
+        <h1 id="titel">Alleen vandaag...</h1>
+        <p id="subtitel">Subtitel tekst komt hier</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Over ons</a></li>
-            <li><a href="#">Diensten</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+     <nav>
+    <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Knop 1</a></li>
+        <li><a href="#">Knop 2</a></li>
+        <li><a href="#">Knop 3</a></li>
+        <li><a href="#">Knop 4</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
     </nav>
 
-    <main>
-        <h2>Onze missie</h2>
-        <p>Wij streven ernaar om de beste oplossingen te bieden voor onze klanten.</p>
-        <h2>Populaire producten</h2>
-        <p>Bekijk onze top producten en aanbiedingen.</p>
+    <main class="flex-container">
+        <!-- Eerste rij: 3 boxen -->
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+
+        <!-- Tweede rij: 1 box -->
+        <div class="box full">Box 4</div>
+
+        <!-- Derde rij: 2 boxen -->
+        <div class="box half">Box 5</div>
+        <div class="box half">Box 6</div>
+
+        <!-- Vierde rij: 1 box -->
+        <div class="box full">Box 7</div>
+
+        <!-- Vijfde rij: 2 boxen -->
+        <div class="box half">Box 8</div>
+        <div class="box half">Box 9</div>
     </main>
 
-<footer>
-    <p>
-        Grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference.
-    </p>
-</footer>
+    <footer>
+        <p>
+            Grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference.
+        </p>
+    </footer>
+</div>
 </body>
 </html>
