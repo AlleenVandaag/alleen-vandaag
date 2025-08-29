@@ -6,13 +6,13 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #588157;
             color: white;
             padding: 20px 0;
             text-align: center;
         }
         nav {
-            background-color: #333;
+            background-color: #3A5A40;
         }
         nav ul {
             list-style-type: none;
@@ -31,14 +31,15 @@
             display: block;
         }
         nav ul li a:hover {
-            background-color: #575757;
+            background-color: #A3B18A;
         }
         main {
             padding: 20px;
             text-align: center;
+            background-color: #DAD7CD;
         }
         footer {
-            background-color: #333;
+            background-color: #344E41;
             color: white;
             text-align: center;
             padding: 10px 0;
