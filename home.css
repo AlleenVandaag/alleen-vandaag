@@ -15,14 +15,17 @@ body, html {
 header {
     background-color: #588157;
     color: white;
-    padding: 20px 0;
+    padding: 10px;
+    padding-top:2px;
     text-align: center;
     flex-shrink: 0;
+    max-height: 100px;
 }
 
 #titel {
     font-family: "Delius Unicase", cursive;
     font-weight: 400;
+    margin-bottom:-10px;
 }
 
 #subtitel {
@@ -32,6 +35,9 @@ header {
 nav {
     background-color: #3A5A40;
     flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -40,6 +46,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; 
 }
 
 nav ul li {
@@ -57,12 +64,46 @@ nav ul li a:hover {
     background-color: #4B6E52;
     border-radius: 3px;
 }
+
 nav ul li a.active {
     background-color: #4B6E52; 
     border-radius: 3px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
+
+.menu-toggle {
+    display: none;
+    background-color: #3A5A40;
+    color: white;
+    padding: 14px 20px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #3A5A40;
+    }
+
+    nav ul.show {
+        display: flex; */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
 
 main.flex-container {
     display: flex;
@@ -74,7 +115,7 @@ main.flex-container {
 }
 
 .box {
-    background-color: rgba(163, 177, 138, 0.8);
+    background-color: white;
     color: black;
     text-align: center;
     padding: 40px 0;
@@ -96,11 +137,52 @@ main.flex-container {
     flex: 1 1 calc(33.33% - 10px);
 }
 
-/* Footer */
 footer {
     background-color: #344E41;
+    font-family: Helvetica, sans-serif;
+    font-size:15px;
     color: white;
     text-align: center;
     padding: 10px 0;
     flex-shrink: 0;
+}
+footer b {
+  display: inline-block;       /* Belangrijk voor transform */
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+footer b.bounce {
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-10px); }
+  60%  { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+@media (max-width: 1024px) {
+    .flex-container .box:nth-child(-n+3) {
+        flex: 1 1 calc(50% - 10px); 
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    .flex-container .box,
+    .box.full,
+    .box.half {
+        flex: 1 1 100%; 
+    }
+    .box {
+        padding: 20px 0;
+        font-size: 18px;
+    }
 }
