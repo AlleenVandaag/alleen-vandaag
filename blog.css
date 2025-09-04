@@ -32,6 +32,15 @@ header {
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
+.fancy{
+  font-family: "Rouge Script", cursive;
+  font-weight: 400;
+  font-style: bold;
+  font-size:40px;
+  padding-left:8px;
+  padding-right:8px;
+}
+
 nav {
     background-color: #3A5A40;
     flex-shrink: 0;
