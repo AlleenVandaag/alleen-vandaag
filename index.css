@@ -29,10 +29,10 @@ header {
 }
 
 #subtitel {
-  font-family: 'Patrick Hand', cursive;
+  font-family: "Patrick Hand", cursive;
   font-size:20px;
+  font-style: normal;
 }
-
 .fancy{
   font-family: "Rouge Script", cursive;
   font-weight: 400;
