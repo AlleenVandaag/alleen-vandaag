@@ -168,6 +168,8 @@ div.flex-container {
     padding: 20px;
     justify-content: center;
     flex-grow: 1; 
+    margin-left:10%;
+    margin-right:10%;
 }
 
 .box {
