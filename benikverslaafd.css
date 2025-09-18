@@ -159,6 +159,8 @@ nav ul li.has-dropdown .dropdown li a:hover {
     grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
     padding: 40px;
+    margin-left:10%;
+    margin-right:10%;
     flex:1;
 }
 
