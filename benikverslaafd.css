@@ -159,6 +159,7 @@ nav ul li.has-dropdown .dropdown li a:hover {
     grid-template-columns: repeat(2, 1fr); /* standaard 2 kolommen */
     gap: 30px;
     padding: 50px;
+    flex:1;
 }
 
 .sectie {
