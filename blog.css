@@ -16,7 +16,7 @@ header {
     background-color: #588157;
     color: white;
     padding: 10px;
-    padding-top:2px;
+    padding-top: 2px;
     text-align: center;
     flex-shrink: 0;
     max-height: 100px;
@@ -25,22 +25,22 @@ header {
 #titel {
     font-family: "Delius Unicase", cursive;
     font-weight: 400;
-    margin-bottom:-10px;
+    margin-bottom: -10px;
 }
 
 #subtitel {
-  font-family: "Patrick Hand", cursive;
-  font-size:20px;
-  font-style: normal;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    font-style: normal;
 }
 
-.fancy{
-  font-family: "Rouge Script", cursive;
-  font-weight: 400;
-  font-style: bold;
-  font-size:40px;
-  padding-left:8px;
-  padding-right:8px;
+.fancy {
+    font-family: "Rouge Script", cursive;
+    font-weight: 400;
+    font-style: bold;
+    font-size: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 nav {
@@ -49,15 +49,16 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -77,9 +78,9 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    background-color: #4B6E52; 
+    background-color: #4B6E52;
     border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
@@ -93,9 +94,45 @@ nav ul li a.active {
     font-size: 18px;
 }
 
+nav ul li.has-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #3A5A40;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: max-content;
+    border-radius: 3px;
+}
+
+nav ul li.has-dropdown .dropdown li {
+    margin-bottom: 8px;
+}
+
+nav ul li.has-dropdown .dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+}
+
+nav ul li.has-dropdown .dropdown li a:hover {
+    background-color: #4B6E52;
+}
+
+/* Desktop dropdown */
+@media (min-width: 769px) {
+    nav ul li.has-dropdown {
+        position: relative;
+    }
+    nav ul li.has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+
+/* Mobile menu */
 @media (max-width: 768px) {
     nav ul {
-        display: none; 
+        display: none;
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -103,7 +140,7 @@ nav ul li a.active {
     }
 
     nav ul.show {
-        display: flex; 
+        display: flex;
     }
 
     .menu-toggle {
@@ -113,108 +150,122 @@ nav ul li a.active {
     nav ul li {
         margin: 5px 0;
     }
+
+    nav ul li.has-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li.has-dropdown .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+
+    nav ul li.has-dropdown .dropdown.show {
+        display: block;
+    }
+
+    nav ul li.has-dropdown .dropdown li a {
+        padding: 10px 0;
+        display: block;
+        text-align: center;
+    }
 }
+
+/* Blog layout */
 .blog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1000px; 
-  margin: 40px auto;
-  padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .blog-post {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-
 .blog-post h2 {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .blog-post .meta {
-  font-size: 0.7em;
-  color: #555;
-  margin-bottom: 15px;
+    font-size: 0.7em;
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .blog-post a {
-  color: #588157;
-  text-decoration: none;
+    color: #588157;
+    text-decoration: none;
 }
 
 .blog-post a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .intro-text {
-  font-size: 0.8em;
-  color: #333;
-  margin-bottom: 10px; 
-  line-height: 1.5;
+    font-size: 0.8em;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 /* Lees meer link */
 .read-more {
-  display: inline-block;
-  font-weight: bold;
-  font-size: 0.7em;
-  color: #588157;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 0.7em;
+    color: #588157;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .read-more:hover {
-  color: #4B6E52;
-  transform: translateY(-2px); 
+    color: #4B6E52;
+    transform: translateY(-2px);
 }
+
 footer {
     background-color: #344E41;
     font-family: Helvetica, sans-serif;
-    font-size:15px;
+    font-size: 15px;
     color: white;
     text-align: center;
     padding: 10px 0;
     flex-shrink: 0;
 }
+
 footer b {
-  display: inline-block;       
-  transition: transform 0.2s ease;
-  cursor: default;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    cursor: default;
 }
 
 footer b.bounce {
-  animation: bounce 0.6s ease;
+    animation: bounce 0.6s ease;
 }
 
 @keyframes bounce {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-10px); }
-  60%  { transform: translateY(5px); }
-  100% { transform: translateY(0); }
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-10px); }
+    60%  { transform: translateY(5px); }
+    100% { transform: translateY(0); }
 }
+
 @media (max-width: 1024px) {
     .flex-container .box:nth-child(-n+3) {
-        flex: 1 1 calc(50% - 10px); 
+        flex: 1 1 calc(50% - 10px);
     }
 }
 
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+    .blog-container {
+        grid-template-columns: 1fr;
     }
-    nav ul li {
-        margin: 5px 0;
-    }
- 
-@media (max-width: 768px) {
-  .blog-container {
-    grid-template-columns: 1fr; 
-  }
-}
-
 }
