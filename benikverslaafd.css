@@ -155,9 +155,10 @@ nav ul li.has-dropdown .dropdown li a:hover {
 }
 
 .container {
-    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* standaard 2 kolommen */
+    gap: 30px;
     padding: 50px;
-    flex: 1;
 }
 
 .sectie {
@@ -205,8 +206,8 @@ footer b.bounce {
     100% { transform: translateY(0); }
 }
 
-@media (max-width: 1024px) {
-    .flex-container .box:nth-child(-n+3) {
-        flex: 1 1 calc(50% - 10px);
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
     }
 }
