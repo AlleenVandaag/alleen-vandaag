@@ -106,8 +106,8 @@ nav ul li.has-dropdown .dropdown {
     position: absolute;
     background-color: #3A5A40;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 5px 0;       
+    margin-top: 1px;       
     min-width: max-content; 
     border-radius: 3px;
   }
