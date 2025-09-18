@@ -258,12 +258,6 @@ footer b.bounce {
     100% { transform: translateY(0); }
 }
 
-@media (max-width: 1024px) {
-    .flex-container .box:nth-child(-n+3) {
-        flex: 1 1 calc(50% - 10px);
-    }
-}
-
 @media (max-width: 768px) {
     .blog-container {
         grid-template-columns: 1fr;
