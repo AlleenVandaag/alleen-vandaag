@@ -221,10 +221,3 @@ footer b.bounce {
     60%  { transform: translateY(5px); }
     100% { transform: translateY(0); }
 }
-
-/* Responsive boxes (indien gebruikt) */
-@media (max-width: 1024px) {
-    .flex-container .box:nth-child(-n+3) {
-        flex: 1 1 calc(50% - 10px);
-    }
-}
