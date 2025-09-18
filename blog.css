@@ -173,7 +173,6 @@ nav ul li.has-dropdown .dropdown li a:hover {
     }
 }
 
-/* Blog layout */
 .blog-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -181,6 +180,7 @@ nav ul li.has-dropdown .dropdown li a:hover {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
+    flex: 1;
 }
 
 .blog-post {
