@@ -209,7 +209,6 @@ footer b.bounce {
     100% { transform: translateY(0); }
 }
 
-/* Responsive boxes */
 @media (max-width: 1024px) {
     .flex-container .box:nth-child(-n+3) {
         flex: 1 1 calc(50% - 10px); 
