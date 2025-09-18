@@ -6,19 +6,20 @@ const boldWords = document.querySelectorAll("footer b");
 boldWords.forEach(word => {
   word.addEventListener("mouseover", () => {
     word.classList.add("bounce");
-    setTimeout(() => word.classList.remove("bounce"), 600); // reset na animatie
+    setTimeout(() => word.classList.remove("bounce"), 600); 
   });
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+function toggleMenu() {
+    document.getElementById("nav-list").classList.toggle("show");
+}
 
-  emailjs.sendForm('service_re00izk', 'template_rju8phl', this)
-    .then(() => {
-      document.getElementById('form-status').textContent = 'Bericht verzonden!';
-      document.getElementById('contact-form').reset();
-    }, (error) => {
-      document.getElementById('form-status').textContent = 'Er is iets misgegaan. Probeer het later opnieuw.';
-      console.error(error);
+const dropdownParents = document.querySelectorAll("nav ul li.has-dropdown > a");
+
+dropdownParents.forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault(); 
+        const dropdown = link.nextElementSibling;
+        dropdown.classList.toggle("show");
     });
 });
