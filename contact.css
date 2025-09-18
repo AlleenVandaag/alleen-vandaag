@@ -16,7 +16,7 @@ header {
     background-color: #588157;
     color: white;
     padding: 10px;
-    padding-top:2px;
+    padding-top: 2px;
     text-align: center;
     flex-shrink: 0;
     max-height: 100px;
@@ -25,22 +25,22 @@ header {
 #titel {
     font-family: "Delius Unicase", cursive;
     font-weight: 400;
-    margin-bottom:-10px;
+    margin-bottom: -10px;
 }
 
 #subtitel {
-  font-family: "Patrick Hand", cursive;
-  font-size:20px;
-  font-style: normal;
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    font-style: normal;
 }
 
-.fancy{
-  font-family: "Rouge Script", cursive;
-  font-weight: 400;
-  font-style: bold;
-  font-size:40px;
-  padding-left:8px;
-  padding-right:8px;
+.fancy {
+    font-family: "Rouge Script", cursive;
+    font-weight: 400;
+    font-style: bold;
+    font-size: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 nav {
@@ -49,12 +49,13 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-}
+    width: 100%;
+    }
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap; 
@@ -93,6 +94,35 @@ nav ul li a.active {
     font-size: 18px;
 }
 
+nav ul li.has-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #3A5A40;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: max-content; 
+    border-radius: 3px;
+  }
+
+nav ul li.has-dropdown .dropdown li {
+    margin-bottom: 8px;
+}
+nav ul li.has-dropdown .dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+}
+
+nav ul li.has-dropdown .dropdown li a:hover {
+    background-color: #4B6E52;
+}
+
+@media (min-width: 769px) {
+    nav ul li.has-dropdown { position: relative; }
+    nav ul li.has-dropdown:hover .dropdown { display: block; }
+}
+
 @media (max-width: 768px) {
     nav ul {
         display: none; 
@@ -101,102 +131,100 @@ nav ul li a.active {
         width: 100%;
         background-color: #3A5A40;
     }
+    nav ul.show { display: flex; }
 
-    nav ul.show {
-        display: flex; 
+    .menu-toggle { display: block; }
+
+    nav ul li { margin: 5px 0; }
+
+    nav ul li.has-dropdown {
+        width: 100%;
+        text-align: center;
     }
-
-    .menu-toggle {
+    nav ul li.has-dropdown .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+    nav ul li.has-dropdown .dropdown.show { display: block; }
+    nav ul li.has-dropdown .dropdown li a {
+        padding: 10px 0;
         display: block;
-    }
-
-    nav ul li {
-        margin: 5px 0;
+        text-align: center;
     }
 }
 
-.container{
-  min-height:auto;
-  padding:50px;
+.container {
+    min-height: auto;
+    padding: 50px;
 }
 
 #contact {
-  max-width: 600px;
-  margin: 50px auto;
-  margin-top:1px;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 10px auto 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 #contact label {
-  display: block;
-  margin-top: 15px;
+    display: block;
+    margin-top: 15px;
 }
 
 #contact input, #contact textarea {
-  width: 95%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
 #contact button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #4B6E52;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4B6E52;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 #contact button:hover {
-  background: #3A5A40;
+    background: #3A5A40;
 }
-
 
 footer {
     background-color: #344E41;
     font-family: Helvetica, sans-serif;
-    font-size:15px;
+    font-size: 15px;
     color: white;
     text-align: center;
     padding: 10px 0;
     flex-shrink: 0;
 }
+
 footer b {
-  display: inline-block;       
-  transition: transform 0.2s ease;
-  cursor: default;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    cursor: default;
 }
 
 footer b.bounce {
-  animation: bounce 0.6s ease;
+    animation: bounce 0.6s ease;
 }
 
 @keyframes bounce {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-10px); }
-  60%  { transform: translateY(5px); }
-  100% { transform: translateY(0); }
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-10px); }
+    60%  { transform: translateY(5px); }
+    100% { transform: translateY(0); }
 }
+
+/* Responsive boxes (indien gebruikt) */
 @media (max-width: 1024px) {
     .flex-container .box:nth-child(-n+3) {
-        flex: 1 1 calc(50% - 10px); 
+        flex: 1 1 calc(50% - 10px);
     }
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav ul li {
-        margin: 5px 0;
-    }
- 
-
 }
