@@ -12,14 +12,14 @@ body, html {
     min-height: 100vh;
 }
 
-header {
+header { 
     background-color: #588157;
-    color: white;
-    padding: 10px;
+    color: white; 
+    padding: 10px; 
     padding-top:2px;
-    text-align: center;
-    flex-shrink: 0;
-    max-height: 100px;
+    text-align: center; 
+    flex-shrink: 0; 
+    max-height: 100px; 
 }
 
 #titel {
@@ -33,6 +33,7 @@ header {
   font-size:20px;
   font-style: normal;
 }
+
 .fancy{
   font-family: "Rouge Script", cursive;
   font-weight: 400;
@@ -42,18 +43,27 @@ header {
   padding-right:8px;
 }
 
+.indexbanners {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: brightness(0.8) contrast(0.9);
+    opacity: 0.85;
+}
+
 nav {
     background-color: #3A5A40;
     flex-shrink: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-}
+    width: 100%;
+    }
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap; 
@@ -92,6 +102,35 @@ nav ul li a.active {
     font-size: 18px;
 }
 
+nav ul li.has-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #3A5A40;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: max-content; 
+    border-radius: 3px;
+  }
+
+nav ul li.has-dropdown .dropdown li {
+    margin-bottom: 8px;
+}
+nav ul li.has-dropdown .dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+}
+
+nav ul li.has-dropdown .dropdown li a:hover {
+    background-color: #4B6E52;
+}
+
+@media (min-width: 769px) {
+    nav ul li.has-dropdown { position: relative; }
+    nav ul li.has-dropdown:hover .dropdown { display: block; }
+}
+
 @media (max-width: 768px) {
     nav ul {
         display: none; 
@@ -100,22 +139,30 @@ nav ul li a.active {
         width: 100%;
         background-color: #3A5A40;
     }
+    nav ul.show { display: flex; }
 
-    nav ul.show {
-        display: flex; */
+    .menu-toggle { display: block; }
+
+    nav ul li { margin: 5px 0; }
+
+    nav ul li.has-dropdown {
+        width: 100%;
+        text-align: center;
     }
-
-    .menu-toggle {
+    nav ul li.has-dropdown .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+    nav ul li.has-dropdown .dropdown.show { display: block; }
+    nav ul li.has-dropdown .dropdown li a {
+        padding: 10px 0;
         display: block;
-    }
-
-    nav ul li {
-        margin: 5px 0;
+        text-align: center;
     }
 }
 
-
-main.flex-container {
+div.flex-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -135,17 +182,9 @@ main.flex-container {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.box.full {
-    flex: 1 1 100%;
-}
-
-.box.half {
-    flex: 1 1 calc(50% - 10px);
-}
-
-.flex-container .box:nth-child(-n+3) {
-    flex: 1 1 calc(33.33% - 10px);
-}
+.box.full { flex: 1 1 100%; }
+.box.half { flex: 1 1 calc(50% - 10px); }
+.flex-container .box:nth-child(-n+3) { flex: 1 1 calc(33.33% - 10px); }
 
 footer {
     background-color: #344E41;
@@ -157,42 +196,29 @@ footer {
     flex-shrink: 0;
 }
 footer b {
-  display: inline-block;       /* Belangrijk voor transform */
-  transition: transform 0.2s ease;
-  cursor: default;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    cursor: default;
 }
-
 footer b.bounce {
-  animation: bounce 0.6s ease;
+    animation: bounce 0.6s ease;
+}
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-10px); }
+    60%  { transform: translateY(5px); }
+    100% { transform: translateY(0); }
 }
 
-@keyframes bounce {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-10px); }
-  60%  { transform: translateY(5px); }
-  100% { transform: translateY(0); }
-}
+/* Responsive boxes */
 @media (max-width: 1024px) {
     .flex-container .box:nth-child(-n+3) {
         flex: 1 1 calc(50% - 10px); 
     }
 }
-
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav ul li {
-        margin: 5px 0;
-    }
     .flex-container .box,
     .box.full,
-    .box.half {
-        flex: 1 1 100%; 
-    }
-    .box {
-        padding: 20px 0;
-        font-size: 18px;
-    }
+    .box.half { flex: 1 1 100%; }
+    .box { padding: 20px 0; font-size: 18px; }
 }
