@@ -47,8 +47,7 @@ header {
     display: block;
     width: 100%;
     height: auto;
-    filter: brightness(0.8) contrast(0.9);
-    opacity: 0.85;
+    filter: brightness(0.6) contrast(0.9);
 }
 
 nav {
