@@ -1,0 +1,244 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+a {
+  color: #2c5f2d; 
+  text-decoration: underline;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #588157;
+    color: white;
+    padding: 10px;
+    padding-top: 2px;
+    text-align: center;
+    flex-shrink: 0;
+    max-height: 100px;
+}
+
+#titel {
+    font-family: "Delius Unicase", cursive;
+    font-weight: 400;
+    margin-bottom: -10px;
+}
+
+#subtitel {
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.fancy {
+    font-family: "Rouge Script", cursive;
+    font-weight: 400;
+    font-style: bold;
+    font-size: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+nav {
+    background-color: #3A5A40;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #4B6E52;
+    border-radius: 3px;
+}
+
+nav ul li a.active {
+    background-color: #4B6E52; 
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-toggle {
+    display: none;
+    background-color: #3A5A40;
+    color: white;
+    padding: 14px 20px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+}
+
+nav ul li.has-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #3A5A40;
+    list-style: none;
+    padding: 5px 0;       
+    margin-top: 1px;       
+    min-width: max-content; 
+    border-radius: 3px;
+  }
+
+nav ul li.has-dropdown .dropdown li {
+    margin-bottom: 8px;
+}
+nav ul li.has-dropdown .dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+}
+
+nav ul li.has-dropdown .dropdown li a:hover {
+    background-color: #4B6E52;
+}
+
+@media (min-width: 769px) {
+    nav ul li.has-dropdown { position: relative; }
+    nav ul li.has-dropdown:hover .dropdown { display: block; }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #3A5A40;
+    }
+    nav ul.show { display: flex; }
+
+    .menu-toggle { display: block; }
+
+    nav ul li { margin: 5px 0; }
+
+    nav ul li.has-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li.has-dropdown .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+    nav ul li.has-dropdown .dropdown.show { display: block; }
+    nav ul li.has-dropdown .dropdown li a {
+        padding: 10px 0;
+        display: block;
+        text-align: center;
+    }
+}
+
+.container {
+    display: grid;
+    gap: 20px;
+    padding: 40px;
+    margin-left:20%;
+    margin-right:20%;
+    flex:1;
+}
+
+.sectie {
+  margin-bottom: 20px;
+}
+
+.kopje {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sub-kopje {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.tips {
+  font-family: "Patrick Hand", cursive;
+  font-size: 20px;
+  font-style: normal;
+  margin:10px 0 5px 0;
+}
+
+.tekst {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.klachten-container {
+  display: flex;
+  gap: 40px; 
+  flex-wrap: wrap; 
+}
+
+.klachten-lijst {
+  flex: 1 1 100px; 
+}
+
+footer {
+    background-color: #344E41;
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+}
+
+footer b {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    cursor: default;
+}
+
+footer b.bounce {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-10px); }
+    60%  { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
