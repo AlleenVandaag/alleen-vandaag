@@ -48,6 +48,8 @@ header {
     width: 100%;
     height: auto;
     filter: brightness(0.6) contrast(0.9);
+    max-height: 200px; 
+    object-fit: cover;  
 }
 
 nav {
