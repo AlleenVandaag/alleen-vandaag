@@ -177,15 +177,28 @@ div.flex-container {
     color: black;
     text-align: center;
     padding: 40px 0;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.box.full { flex: 1 1 100%; }
-.box.half { flex: 1 1 calc(50% - 10px); }
-.flex-container .box:nth-child(-n+3) { flex: 1 1 calc(33.33% - 10px); }
+.box.full { 
+  flex: 1 1 100%; 
+  padding:20px;
+}
+.box.half { 
+  flex: 1 1 calc(50% - 10px); 
+  padding:20px;
+  }
+
+.flex-container .box:nth-child(-n+3) { 
+  flex: 1 1 calc(33.33% - 10px); 
+}
+
+.flex-container .box:first-child {
+    flex: 1 1 100%; 
+}
 
 footer {
     background-color: #344E41;
